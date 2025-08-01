@@ -1,0 +1,265 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --dark-bg: #f4f3ee;
+  --text-dark: #2e2e2e;
+  --accent: #e0afa0;
+  --accent-hover: #d89b90;
+  --muted: #8a817c;
+  --white: #ffffff;
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  background-color: var(--dark-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  background-color: var(--white);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--accent);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-family: var(--font-secondary);
+}
+
+nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f4f3ee 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-family: var(--font-primary);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.hero-img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.about p, .projects p {
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.projects .project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project h3 {
+  font-family: var(--font-primary);
+  margin-bottom: 0.5rem;
+}
+
+.project a.btn {
+  margin-top: 1rem;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  background-color: var(--white);
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.testimonials {
+  background-color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.testimonial {
+  background-color: var(--dark-bg);
+  padding: 2rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.testimonial h4 {
+  text-align: right;
+  font-weight: 500;
+  color: var(--text-dark);
+  font-family: var(--font-secondary);
+}
